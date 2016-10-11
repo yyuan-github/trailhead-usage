@@ -1,0 +1,23 @@
+Trailhead Beta API Usage Notes
+
+To use the API (https://api.trailhead.salesforce.com), you need some basic pieces for access
+
+1. Get API Key from Adam Torman -- one time only
+
+2. Get Access Token -- you'll need this occasionally as it times out. You can do this via Chuck Mortimore's tool (https://openidconnect.herokuapp.com/)
+  - Open that URL in a fresh browser session (e.g., anonymous)
+  - Check/change login host 
+  - Hit Next
+  - Authenticate (using our Org62 account)
+  - Hit Next (you should land in bubble 3
+  - Jot down the Access Token on the left top of the screen -- it's a long string so be sure to copy it all
+
+With those two pieces, you can use the api via:
+
+ a) web UI on https://api.trailhead.salesforce.com
+  - find the "Click to authorize if Red" button and click the red "!"
+  - fill in the X-API-key field with the API Key value
+  - fill in the Authorization field with the string "Bearer: <xxx>" where <xxx> is the Access Token
+
+ b) via curl - see curl examples in https://api.trailhead.salesforce.com
+

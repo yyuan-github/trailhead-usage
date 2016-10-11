@@ -1,0 +1,9 @@
+#!/bin/ksh
+
+# Get count -- calls API w/ params and uses email-based search to get JSON
+
+curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' \
+--header 'X-Api-Key: '$2 \
+--header 'Authorization: Bearer '$3 \
+-d '{ "emails": ['\"$1\"'] }' \
+'https://api.trailhead.salesforce.com/v1/search/users'

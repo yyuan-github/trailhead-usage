@@ -1,0 +1,12 @@
+The included ksh scripts use curl to access Trailhead Beta API.
+Detailed API notes are on https://api.trailhead.salesforce.com
+
+To prepare scripts
+ 1. edit the myloop file:
+  a. insert the API key
+  b. insert the Access Token
+  c. insert your list of email bases strings
+ 2. chmod +x get_cnt, mkbadgelog, and myloop
+
+To get your report, run mkbadgelog (e.g., "./mkbadgelog").
+  

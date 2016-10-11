@@ -1,0 +1,22 @@
+#!/bin/ksh
+
+# API Key - get from Adam Torman
+# e.g., api_key='e378fcab4803998e4a9bf08197d4b902'
+api_key='<your key>'
+
+# Access Token - get from identity tool, e.g., Chuck Mortimore Heroku one (https://openidconnect.herokuapp.com)
+# e.g., access_token='00D000000000062!BQsAQDJ%3CKwKBB3QQciE_WZvt3UAq_UuTS2L90969_1FrCaizsJMIXemRbXu5sV6o0lVk8Q7BG3aWEZaz0oOUFDVyUeY1hc'
+access_token='<your access token>'
+
+for email_base in \
+# Your list of emails bases (e.g., without the @salesforce)
+# e.g., yyuan atorman duarte sarah.franklin 
+<your list of email bases>
+
+# Count the "Completed" modules -> badges. This may have to change if JSON syntax or definitions change
+do
+  email_addr="${email_base}@salesforce.com"
+  # 16.08.04 - updated string to work for superbadges
+  num_badges="`./get_cnt ${email_addr} ${api_key} ${access_token} | python -m json.tool  | grep -c '"status": "Completed"'`"
+  echo ${email_addr} ${num_badges} 
+done
